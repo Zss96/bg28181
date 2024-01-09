@@ -182,8 +182,8 @@ func (channel *Channel) CreateRequst(Method sip.RequestMethod) (req sip.Request)
 		SeqNo:      uint32(d.sn),
 		MethodName: Method,
 	}
-	port := sip.Port(conf.SipPort)
-	// port := sip.Port(7100)
+	// port := sip.Port(conf.SipPort)
+	port := sip.Port(7100)
 	// port := 7100
 	serverAddr := sip.Address{
 		//DisplayName: sip.String{Str: d.serverConfig.Serial},
@@ -197,8 +197,8 @@ func (channel *Channel) CreateRequst(Method sip.RequestMethod) (req sip.Request)
 
 	//非同一域的目标地址需要使用@host
 	host := conf.Realm
-	d.Debug("=====================", zap.String("NetAddr", d.NetAddr), zap.String("channel.DeviceId", channel.DeviceID))
-	fmt.Println("============================", d.NetAddr, channel.DeviceID)
+	d.Debug("CreateRequst=====================", zap.String("NetAddr", d.NetAddr), zap.String("channel.DeviceId", channel.DeviceID))
+	fmt.Println("CreateRequst============================", d.NetAddr, channel.DeviceID)
 	if channel.DeviceID[0:9] != host {
 		if channel.Port != 0 {
 			deviceIp := d.NetAddr
