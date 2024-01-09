@@ -1,4 +1,4 @@
-module m7s.live/plugin/gb28181/v4
+module github.com/Zss96/bg28181/v4
 
 go 1.19
 
